@@ -1,0 +1,22 @@
+version: "3.3"
+   
+services:
+  db:
+    image: postgres
+    container_name: galsendev-postgres-db
+    volumes:
+        - ./data/db:/var/lib/postgresql/data
+    environment:
+        - POSTGRES_DB=galsendev_demo
+        - POSTGRES_USER=galsendev
+        - POSTGRES_PASSWORD=dev4life
+  web:
+    container_name: galsendev-django-app
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+        - .:/code
+    ports:
+        - "8000:8000"
+    depends_on:
+        - db

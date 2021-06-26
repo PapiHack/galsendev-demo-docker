@@ -11,9 +11,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import dotenv_values
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load env variable defined in .env file
+env = dotenv_values(BASE_DIR / '.env')
 
 
 # Quick-start development settings - unsuitable for production
@@ -77,12 +81,12 @@ WSGI_APPLICATION = 'galsendev_demo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'galsendev_demo',
-        'USER': 'galsendev',
-        'PASSWORD': 'dev4life',
-        'HOST': 'db',
-        'PORT': 5432,
+        'ENGINE': env['DB_ENGINE'],
+        'NAME': env['DB_NAME'],
+        'USER': env['DB_USER'],
+        'PASSWORD': env['DB_PASSWORD'],
+        'HOST': env['DB_HOST'],
+        'PORT': env['DB_PORT'],
     }
 }
 

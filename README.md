@@ -25,7 +25,7 @@ The main purposes was to make a simple presentation of `docker` and its capabili
 
     `sudo chown -R $USER:$USER .`
 
-- If everything goes well, congratulations, you can start coding!
+- If everything goes well, congratulations, you can start coding! You can visit <http://localhost:8000>
 
 ## Environment variable usage
 

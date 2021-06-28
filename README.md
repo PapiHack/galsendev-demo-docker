@@ -30,7 +30,7 @@ The main purposes was to make a simple presentation of `docker` and its capabili
 ## Environment variable usage
 
 If you take a good look at the docker compose file, I hardened the database credentials, which is not a good practice. To remedy this, it is better to use environment variables instead of hardening these values in the configurations.
-You'll fine the updated `docker-compose` and `.env` file on [docker official docs](https://github.com/PapiHack/galsendev-demo-docker/tree/set-env-variables)
+You'll fine the updated `docker-compose` and `.env` file on [this branch](https://github.com/PapiHack/galsendev-demo-docker/tree/set-env-variables).
 
 - Pull the branch [set-env-variables](https://github.com/PapiHack/galsendev-demo-docker/tree/set-env-variables)
 
